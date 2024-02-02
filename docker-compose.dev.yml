@@ -1,0 +1,13 @@
+volumes:
+  pg_data:
+
+services:
+  pg_server:
+    container_name: pg_server
+    image: postgres
+    environment:
+      POSTGRES_USER: ${PG_USERNAME}
+      POSTGRES_DB: ${PG_DATABASE}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+    ports:
+      - '5432:5432'
